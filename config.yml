@@ -1,0 +1,12 @@
+jdbc:
+  ds1:
+    url: jdbc:derby:target/derby/ds1;create=true
+    driverClassName: org.apache.derby.jdbc.EmbeddedDriver
+    initialSize: 1
+  ds2:
+    url: jdbc:derby:target/derby/ds2;create=true
+    driverClassName: org.apache.derby.jdbc.EmbeddedDriver
+    initialSize: 1
+metrics:
+  reporters:
+    - type: sl4j
