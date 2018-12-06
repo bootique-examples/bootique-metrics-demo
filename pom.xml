@@ -7,22 +7,19 @@
     <parent>
         <groupId>io.bootique.parent</groupId>
         <artifactId>bootique-parent</artifactId>
-        <version>0.12</version>
+        <version>0.13</version>
     </parent>
 
     <groupId>io.bootique.metrics.demo</groupId>
-    <artifactId>bootique.metrics.demo</artifactId>
+    <artifactId>bootique-metrics-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <name>bootique-metrics-demo</name>
 
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <main.class>Application</main.class>
+        <main.class>io.bootique.metrics.demo.Application</main.class>
 
-        <derby-version>10.12.1.1</derby-version>
+        <derby-version>10.14.2.0</derby-version>
     </properties>
 
     <dependencyManagement>
@@ -30,7 +27,7 @@
             <dependency>
                 <groupId>io.bootique.bom</groupId>
                 <artifactId>bootique-bom</artifactId>
-                <version>0.24-SNAPSHOT</version>
+                <version>1.0.RC1</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -56,8 +53,12 @@
             <artifactId>bootique-metrics</artifactId>
         </dependency>
         <dependency>
+            <groupId>io.bootique.metrics</groupId>
+            <artifactId>bootique-metrics-healthchecks</artifactId>
+        </dependency>
+        <dependency>
             <groupId>io.bootique.jdbc</groupId>
-            <artifactId>bootique-jdbc</artifactId>
+            <artifactId>bootique-jdbc-tomcat</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.derby</groupId>

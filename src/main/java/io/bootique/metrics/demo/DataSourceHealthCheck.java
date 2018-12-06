@@ -20,8 +20,8 @@ public class DataSourceHealthCheck implements HealthCheck {
     public HealthCheckOutcome check() throws Exception {
         try (Connection c = dataSourceFactory.forName(dataSourceName).getConnection()) {
             return c.isValid(1)
-                    ? HealthCheckOutcome.healthy()
-                    : HealthCheckOutcome.unhealthy("Connection validation failed");
+                    ? HealthCheckOutcome.ok()
+                    : HealthCheckOutcome.critical("Connection validation failed");
         }
     }
 }

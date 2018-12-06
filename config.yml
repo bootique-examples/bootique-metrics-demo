@@ -7,6 +7,7 @@ jdbc:
     url: jdbc:derby:target/derby/ds2;create=true
     driverClassName: org.apache.derby.jdbc.EmbeddedDriver
     initialSize: 1
+
 metrics:
   reporters:
     - type: sl4j

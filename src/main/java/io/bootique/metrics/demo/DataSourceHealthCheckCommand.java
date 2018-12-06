@@ -8,6 +8,7 @@ import io.bootique.command.CommandWithMetadata;
 import io.bootique.meta.application.CommandMetadata;
 import io.bootique.metrics.health.HealthCheckOutcome;
 import io.bootique.metrics.health.HealthCheckRegistry;
+import io.bootique.metrics.health.HealthCheckStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,7 +32,7 @@ public class DataSourceHealthCheckCommand extends CommandWithMetadata {
     @Override
     public CommandOutcome run(Cli cli) {
         for (Map.Entry<String, HealthCheckOutcome> entry : registry.get().runHealthChecks().entrySet()) {
-            if (entry.getValue().isHealthy()) {
+            if (entry.getValue().getStatus() == HealthCheckStatus.OK) {
                 LOGGER.info(entry.getKey() + ": OK");
             } else {
                 LOGGER.error(entry.getKey() + ": FAIL");
