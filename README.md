@@ -24,7 +24,7 @@ mvn package
 
 Check the options available in your app:
 ```bash
-java -jar target/bootique.metrics.demo-1.0-SNAPSHOT.jar -h  
+java -jar target/bootique-metrics-demo-1.0-SNAPSHOT.jar -h  
 ```
 ```
 OPTIONS
@@ -51,6 +51,7 @@ jdbc:
 metrics:
   reporters:
     - type: sl4j
+      period: 5s
 ```
 Second, contribute `DataSourceHealthCheckGroup` combining [Health Checks](http://metrics.dropwizard.io/3.2.3/manual/healthchecks.html)
 into a unit of work. 
@@ -62,7 +63,7 @@ Third, inject `MetricRegistry` in the code to create [Meters](http://metrics.dro
 
 Run the demo: 
 ```bash
-java -jar target/bootique.metrics.demo-1.0-SNAPSHOT.jar --config=config.yml 
+java -jar target/bootique-metrics-demo-1.0-SNAPSHOT.jar --config=config.yml 
 ```
 Result: the default command `ds-check` runs all health checks, [Slf4jReporter](http://metrics.dropwizard.io/3.1.0/manual/core/#man-core-reporters-slf4j) 
 prints `Gauges`:

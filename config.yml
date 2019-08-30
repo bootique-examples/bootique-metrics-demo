@@ -10,4 +10,5 @@ jdbc:
 
 metrics:
   reporters:
-    - type: sl4j
+    - type: slf4j
+      period: 5s
