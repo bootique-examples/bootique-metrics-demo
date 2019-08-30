@@ -10,6 +10,7 @@ The example of [Dropwizard Metrics](http://metrics.dropwizard.io/3.2.3/) integra
       
     * Java 1.8 or newer.
     * Apache Maven.
+    * Docker
       
 ## Build the Demo
       
@@ -21,6 +22,20 @@ mvn package
 ```
 
 ## Run the Demo 
+
+First run Graphite:
+
+```bash
+docker run -d\
+ --name graphite\
+ --restart=always\
+ -p 80:80\
+ -p 2003-2004:2003-2004\
+ -p 2023-2024:2023-2024\
+ -p 8125:8125/udp\
+ -p 8126:8126\
+ graphiteapp/graphite-statsd
+```
 
 Check the options available in your app:
 ```bash
@@ -50,8 +65,9 @@ jdbc:
     initialSize: 1
 metrics:
   reporters:
-    - type: sl4j
+    - type: slf4j
       period: 5s
+    - type: graphite
 ```
 Second, contribute `DataSourceHealthCheckGroup` combining [Health Checks](http://metrics.dropwizard.io/3.2.3/manual/healthchecks.html)
 into a unit of work. 
@@ -78,6 +94,8 @@ INFO  [2017-09-19 12:42:30,143] metrics-logger-reporter-1-thread-1 metrics: type
 INFO  [2017-09-19 12:42:30,143] metrics-logger-reporter-1-thread-1 metrics: type=GAUGE, name=io.bootique.metrics.demo.ds.InstrumentedLazyDataSourceFactory.ds2.idle, value=1
 ...
 ```
+
+To look on [Graphite](http://graphiteapp.org) report, go to http://localhost/dashboard
 
 
 

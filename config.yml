@@ -12,3 +12,4 @@ metrics:
   reporters:
     - type: slf4j
       period: 5s
+    - type: graphite

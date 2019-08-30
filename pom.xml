@@ -20,6 +20,7 @@
         <main.class>io.bootique.metrics.demo.Application</main.class>
 
         <derby-version>10.14.2.0</derby-version>
+        <metrics-graphite-version>3.2.5</metrics-graphite-version>
     </properties>
 
     <dependencyManagement>
@@ -63,6 +64,11 @@
         <dependency>
             <groupId>org.apache.derby</groupId>
             <artifactId>derby</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.dropwizard.metrics</groupId>
+            <artifactId>metrics-graphite</artifactId>
+            <version>${metrics-graphite-version}</version>
         </dependency>
     </dependencies>
 
