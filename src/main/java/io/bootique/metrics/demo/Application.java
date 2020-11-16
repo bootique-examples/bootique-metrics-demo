@@ -1,17 +1,17 @@
 package io.bootique.metrics.demo;
 
 import com.google.inject.Binder;
-import com.google.inject.Module;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
 import io.bootique.BQCoreModule;
+import io.bootique.BaseModule;
 import io.bootique.Bootique;
 import io.bootique.jdbc.DataSourceFactory;
 import io.bootique.jdbc.JdbcModule;
 import io.bootique.metrics.MetricNaming;
 import io.bootique.metrics.health.HealthCheckModule;
 
-public class Application implements Module {
+public class Application extends BaseModule {
 
     public static final MetricNaming METRIC_NAMING = MetricNaming.forModule(Application.class);
 
