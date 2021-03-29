@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/bootique-examples/bootique-metrics-demo.svg)](https://travis-ci.org/bootique-examples/bootique-metrics-demo)
+[![verify](https://github.com/bootique-examples/bootique-metrics-demo/actions/workflows/verify.yml/badge.svg)](https://github.com/bootique-examples/bootique-metrics-demo/actions/workflows/verify.yml)
 # bootique-metrics-demo
 
 The example of [Dropwizard Metrics](http://metrics.dropwizard.io/3.2.3/) integration into an application built on [Bootique](https://bootique.io).
