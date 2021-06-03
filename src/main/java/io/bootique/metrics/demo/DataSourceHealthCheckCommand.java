@@ -1,7 +1,5 @@
 package io.bootique.metrics.demo;
 
-import com.google.inject.Inject;
-import com.google.inject.Provider;
 import io.bootique.cli.Cli;
 import io.bootique.command.CommandOutcome;
 import io.bootique.command.CommandWithMetadata;
@@ -12,6 +10,8 @@ import io.bootique.metrics.health.HealthCheckStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Inject;
+import javax.inject.Provider;
 import java.util.Map;
 
 public class DataSourceHealthCheckCommand extends CommandWithMetadata {

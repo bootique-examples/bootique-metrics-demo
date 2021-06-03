@@ -1,10 +1,10 @@
 package io.bootique.metrics.demo;
 
+import javax.inject.Inject;
 import javax.sql.DataSource;
 
 import com.codahale.metrics.Gauge;
 import com.codahale.metrics.MetricRegistry;
-import com.google.inject.Inject;
 import io.bootique.jdbc.DataSourceListener;
 import org.apache.tomcat.jdbc.pool.ConnectionPool;
 
